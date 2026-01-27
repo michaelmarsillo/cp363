@@ -1,0 +1,5 @@
+SELECT broadDesc
+FROM vMemberBroad
+WHERE memberForename = 'Donald'
+  AND memberSurname  = 'Avery'
+ORDER BY broadDesc;
