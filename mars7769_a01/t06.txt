@@ -1,3 +1,0 @@
-SELECT pubTitle FROM pub
-WHERE pubPubType IN ( SELECT pubType FROM pubType WHERE pubTypeDesc = 'Journal Article' )
-ORDER BY pubTitle;
