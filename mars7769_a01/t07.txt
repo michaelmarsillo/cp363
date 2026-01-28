@@ -1,0 +1,4 @@
+SELECT pubTitle
+FROM pub
+WHERE pubMemberId = 1
+ORDER BY pubTitle
