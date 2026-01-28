@@ -1,3 +1,0 @@
-SELECT pubTitle FROM pub
-WHERE pubMemberId IN ( SELECT memberId FROM member WHERE memberForename = 'Leonard' AND memberSurname = 'Friesen' )
-ORDER BY pubTitle

@@ -1,1 +1,0 @@
-SELECT * FROM broad WHERE broadDesc LIKE "Defence%" ORDER BY broadDesc
