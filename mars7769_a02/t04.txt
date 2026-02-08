@@ -1,0 +1,7 @@
+SELECT p.pubTitle, pt.pubTypeDesc
+FROM member m
+JOIN pub p ON p.pubMemberId = m.memberId
+JOIN pubType pt ON pt.pubType = p.pubPubType
+WHERE m.memberSurname = 'Friesen'
+  AND m.memberForename = 'Leonard'
+ORDER BY p.pubTitle

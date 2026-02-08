@@ -1,0 +1,5 @@
+SELECT m.memberSurname, m.memberForename, pt.pubTypeDesc, p.pubTitle
+FROM member m
+JOIN pub p ON p.pubMemberId = m.memberId
+JOIN pubType pt ON pt.pubType = p.pubPubType
+ORDER BY m.memberSurname, m.memberForename, pt.pubTypeDesc, p.pubTitle

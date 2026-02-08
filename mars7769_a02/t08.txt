@@ -1,0 +1,5 @@
+SELECT m.memberSurname, m.memberForename, COUNT(mb.memberBroadBroadId) AS numBroadExpertises
+FROM member m
+LEFT JOIN memberBroad mb ON mb.memberBroadMemberId = m.memberId
+GROUP BY m.memberSurname, m.memberForename
+ORDER BY m.memberSurname, m.memberForename

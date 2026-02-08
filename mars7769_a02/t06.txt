@@ -1,0 +1,7 @@
+SELECT m.memberSurname, m.memberForename,
+       SUM(CASE WHEN pt.pubTypeDesc = 'book' THEN 1 ELSE 0 END) AS numBooks
+FROM member m
+LEFT JOIN pub p ON p.pubMemberId = m.memberId
+LEFT JOIN pubType pt ON pt.pubType = p.pubPubType
+GROUP BY m.memberSurname, m.memberForename
+ORDER BY m.memberSurname, m.memberForename
