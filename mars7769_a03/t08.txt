@@ -1,0 +1,8 @@
+SELECT memberSurname, memberForename, broadCount
+FROM (
+  SELECT memberId, memberSurname, memberForename,
+    (SELECT COUNT(*) FROM memberBroad WHERE memberBroadMemberId = member.memberId) AS broadCount
+  FROM member
+) AS subquery
+WHERE broadCount >= 9
+ORDER BY memberSurname, memberForename

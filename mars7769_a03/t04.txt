@@ -1,0 +1,6 @@
+SELECT memberSurname, memberForename, broadDesc
+FROM vMemberBroad
+WHERE memberId NOT IN (
+  SELECT pubMemberId FROM pub
+)
+ORDER BY memberSurname, memberForename, broadDesc

@@ -1,0 +1,8 @@
+SELECT memberSurname, memberForename, pubCount
+FROM (
+  SELECT memberId, memberSurname, memberForename,
+    (SELECT COUNT(*) FROM pub WHERE pubMemberId = member.memberId) AS pubCount
+  FROM member
+) AS subquery
+WHERE pubCount >= 5
+ORDER BY memberSurname, memberForename

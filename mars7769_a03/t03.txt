@@ -1,0 +1,10 @@
+SELECT memberSurname, memberForename, narrowDesc
+FROM vMemberNarrow
+WHERE broadDesc = 'Arms Control and Non-Proliferation Studies'
+AND memberId NOT IN (
+  SELECT memberBroadMemberId
+  FROM memberBroad
+  JOIN broad ON memberBroadBroadId = broadId
+  WHERE broadDesc = 'Environmental Security'
+)
+ORDER BY memberSurname, memberForename
